@@ -1,0 +1,13 @@
+import discord
+from discord.ext import commands
+from functions.file_functions import get_config
+
+
+class CHANGEME (commands.Cog):
+    def __init__(self, client):
+        self.client = client
+        self.TOKEN, self.trapDir, self.memeDir, self.homeworkDir, self.trashDir = get_config()
+
+
+def setup(client):
+    client.add_cog(CHANGEME(client))
